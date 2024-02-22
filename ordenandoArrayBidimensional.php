@@ -33,4 +33,12 @@ function ordenaNotas(array $nota1, array $nota2)
 // Aqui usamos usort que é uma forma de ordenar seguindo as minhas regras
 usort($notas, 'ordenaNotas');
 var_dump($notas);
-die;
+
+// Função que faz a mesma coisa de forma mais fácil
+function ordenaNotasFacilitado(array $nota1, array $nota2)
+{
+    return $nota1['nota'] <=> $nota2['nota'];
+}
+
+usort($notas, 'ordenaNotasFacilitado');
+var_dump($notas)
