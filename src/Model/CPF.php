@@ -2,7 +2,7 @@
 
 namespace Projeto\Banco\Model;
 
-class CPF {
+final class CPF {
     private string $cpf;
     
     public function __construct(string $cpf) {
