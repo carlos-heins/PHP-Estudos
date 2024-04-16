@@ -4,6 +4,7 @@ namespace Projeto\Banco\Model;
 
 final class Endereco
 {
+    use AcessoPropriedades;
     private string $cidade;
     private string $bairro;
     private string $rua;
@@ -22,7 +23,8 @@ final class Endereco
         return $this->cidade;
     }
 
-    public function escreveCidade(string $cidade) {
+    public function escreveCidade(string $cidade)
+    {
         $this->cidade = $cidade;
     }
 
@@ -31,7 +33,8 @@ final class Endereco
         return $this->bairro;
     }
 
-    public function escreveBairro(string $bairro) {
+    public function escreveBairro(string $bairro)
+    {
         $this->bairro = $bairro;
     }
 
@@ -39,7 +42,8 @@ final class Endereco
     {
         return $this->rua;
     }
-    public function escreveRua(string $rua) {
+    public function escreveRua(string $rua)
+    {
         $this->rua = $rua;
     }
 
@@ -47,19 +51,13 @@ final class Endereco
     {
         return $this->numero;
     }
-    public function escreveNumero(string $numero) {
+    public function escreveNumero(string $numero)
+    {
         $this->numero = $numero;
     }
     public function __toString(): string
     {
         return "{$this->rua}, {$this->numero}, {$this->bairro}, {$this->cidade}";
-    }
-    public function __get(string $nomeAtributo)
-    {
-        // ex: rua -> recuperaRua();
-        $metodo = 'recupera' . ucfirst($nomeAtributo);
-
-        return $this->$metodo();
     }
     public function __set(string $nomeAtributo, $valor)
     {
